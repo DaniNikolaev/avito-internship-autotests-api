@@ -172,7 +172,7 @@ class TestNegativeAdvertisementsV1:
     def test_create_advertisement_v1_with_zero_price(self,
                                                      item_v1_client: ItemV1Client,
                                                      ):
-        request_data, field = get_request_data_to_tests("price", 0)
+        request_data, _ = get_request_data_to_tests("price", 0)
 
         response = item_v1_client.try_create_advertisement_api(request_data)
         assert_status_code(response.status_code, HTTPStatus.OK)
@@ -189,7 +189,7 @@ class TestNegativeAdvertisementsV1:
     def test_create_advertisement_v1_with_very_long_name(self,
                                                          item_v1_client: ItemV1Client,
                                                          ):
-        request_data, field = get_request_data_to_tests("name", "A" * 1000)
+        request_data, _ = get_request_data_to_tests("name", "A" * 1000)
 
         response = item_v1_client.try_create_advertisement_api(request_data)
         assert_status_code(response.status_code, HTTPStatus.BAD_REQUEST)
