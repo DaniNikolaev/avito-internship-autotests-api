@@ -1,0 +1,3 @@
+INFO     HTTP_CLIENT:event_hooks.py:27 Make POST request to https://qa-internship.avito.com/api/1/item
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 400 Bad Request from https://qa-internship.avito.com/api/1/item
+INFO     BASE_ASSERTIONS:base.py:19 Check that response status code equals to 200
