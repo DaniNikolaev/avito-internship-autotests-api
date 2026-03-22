@@ -1,0 +1,2 @@
+INFO     HTTP_CLIENT:event_hooks.py:27 Make POST request to https://qa-internship.avito.com/api/1/item
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 504 Gateway Time-out from https://qa-internship.avito.com/api/1/item
