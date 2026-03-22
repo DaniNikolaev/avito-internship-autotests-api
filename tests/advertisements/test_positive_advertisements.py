@@ -24,7 +24,7 @@ from tools.assertions.v1.items_v1 import (
     assert_get_advertisement_v1_not_found_response,
     assert_get_advertisement_v1_response,
     assert_get_advertisements_v1_response)
-from tools.helpers import delete_advertisement_by_id, get_id_from_response
+from tools.helpers import delete_advertisement_by_id, get_id_from_response, get_request_data_to_tests
 
 
 @allure.epic(AllureEpic.API_TESTING)
@@ -47,6 +47,31 @@ class TestPositiveAdvertisementsV1:
 
         validate_json_schema(response.json(), CreateAdvertisementV1ResponseSchema.model_json_schema())
 
+        delete_advertisement_by_id(item_v1_client, item_v2_client, get_id_from_response(response_data.status))
+
+    @allure.title("Test create advertisement v1 with minimal positive int fields")
+    @allure.tag(AllureTag.POSITIVE, AllureTag.POSITIVE_VALUES)
+    @pytest.mark.parametrize("field,correct_value", [
+        ("sellerID", 1),
+        ("price", 1),
+        ("statistics.likes", 1),
+        ("statistics.viewCount", 1),
+        ("statistics.contacts", 1),
+    ])
+    def test_create_advertisement_v1_with_minimal_positive_int_fields(self,
+                                                                      item_v1_client: ItemV1Client,
+                                                                      item_v2_client: ItemV2Client,
+                                                                      field: str,
+                                                                      correct_value: int):
+        request_data, field = get_request_data_to_tests(field, correct_value)
+
+        response = item_v1_client.try_create_advertisement_api(request_data)
+        response_data = CreateAdvertisementV1ResponseSchema.model_validate_json(response.text)
+
+        assert_status_code(response.status_code, HTTPStatus.OK)
+        assert_create_advertisement_v1_response(response_data)
+
+        validate_json_schema(response.json(), CreateAdvertisementV1ResponseSchema.model_json_schema())
         delete_advertisement_by_id(item_v1_client, item_v2_client, get_id_from_response(response_data.status))
 
     @allure.title("Test get advertisement v1")

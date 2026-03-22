@@ -30,7 +30,7 @@ def delete_advertisement_by_id(item_v1_client: ItemV1Client,
         logger.error(f"Unexpected error during cleanup of {advertisement_id}: {e}", exc_info=True)
 
 
-def get_request_data_to_negative_tests(field: str, value: Any) -> (dict[str, Any], str):
+def get_request_data_to_tests(field: str, value: Any) -> (dict[str, Any], str):
     request_data = {
         "sellerID": fake.seller_id(),
         "name": fake.name(),

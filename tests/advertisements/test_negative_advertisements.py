@@ -28,7 +28,7 @@ from tools.assertions.v1.items_v1 import (
     assert_get_empty_advertisements_v1_response)
 from tools.fakers import fake
 from tools.generators import generate_seller_id
-from tools.helpers import get_request_data_to_negative_tests
+from tools.helpers import get_request_data_to_tests
 
 
 @allure.epic(AllureEpic.API_TESTING)
@@ -49,7 +49,7 @@ class TestNegativeAdvertisementsV1:
         "statistics.contacts"
     ])
     def test_create_advertisement_v1_with_null_fields(self, item_v1_client: ItemV1Client, field: str):
-        request_data, field = get_request_data_to_negative_tests(field, None)
+        request_data, field = get_request_data_to_tests(field, None)
 
         response = item_v1_client.try_create_advertisement_api(request_data)
         response_data = BadRequestErrorResponseSchemaV1.model_validate_json(response.text)
@@ -73,7 +73,7 @@ class TestNegativeAdvertisementsV1:
         "statistics.contacts"
     ])
     def test_create_advertisement_v1_with_empty_fields(self, item_v1_client: ItemV1Client, field: str):
-        request_data, field = get_request_data_to_negative_tests(field, "")
+        request_data, field = get_request_data_to_tests(field, "")
 
         response = item_v1_client.try_create_advertisement_api(request_data)
         response_data = BadRequestErrorResponseSchemaV1.model_validate_json(response.text)
@@ -129,7 +129,7 @@ class TestNegativeAdvertisementsV1:
                                                            item_v1_client: ItemV1Client,
                                                            field: str,
                                                            incorrect_value: Any):
-        request_data, field = get_request_data_to_negative_tests(field, incorrect_value)
+        request_data, field = get_request_data_to_tests(field, incorrect_value)
 
         response = item_v1_client.try_create_advertisement_api(request_data)
         response_data = BadRequestErrorResponseSchemaV1.model_validate_json(response.text)
@@ -155,10 +155,67 @@ class TestNegativeAdvertisementsV1:
                                                               item_v1_client: ItemV1Client,
                                                               field: str,
                                                               incorrect_value: Any):
-        request_data, field = get_request_data_to_negative_tests(field, incorrect_value)
+        request_data, field = get_request_data_to_tests(field, incorrect_value)
 
         response = item_v1_client.try_create_advertisement_api(request_data)
         assert_status_code(response.status_code, HTTPStatus.BAD_REQUEST)
+        response_data = BadRequestErrorResponseSchemaV1.model_validate_json(response.text)
+
+        assert_create_advertisement_v1_with_incorrect_fields_bad_request_response(response_data)
+
+        validate_json_schema(response.json(), BadRequestErrorResponseSchemaV1.model_json_schema())
+
+    @allure.title("Test create advertisement v1 with zero price")
+    @allure.tag(AllureTag.ZERO, AllureTag.VALIDATION)
+    @pytest.mark.xfail(
+        reason="API returns 400 status code, but should returns 200")
+    def test_create_advertisement_v1_with_zero_price(self,
+                                                     item_v1_client: ItemV1Client,
+                                                     ):
+        request_data, field = get_request_data_to_tests("price", 0)
+
+        response = item_v1_client.try_create_advertisement_api(request_data)
+        assert_status_code(response.status_code, HTTPStatus.OK)
+        response_data = BadRequestErrorResponseSchemaV1.model_validate_json(response.text)
+
+        assert_create_advertisement_v1_with_incorrect_fields_bad_request_response(response_data)
+
+        validate_json_schema(response.json(), BadRequestErrorResponseSchemaV1.model_json_schema())
+
+    @allure.title("Test create advertisement v1 with very long name")
+    @allure.tag(AllureTag.ZERO, AllureTag.VALIDATION)
+    @pytest.mark.xfail(
+        reason="API returns 200 status code, but should returns 400")
+    def test_create_advertisement_v1_with_very_long_name(self,
+                                                         item_v1_client: ItemV1Client,
+                                                         ):
+        request_data, field = get_request_data_to_tests("name", "A" * 1000)
+
+        response = item_v1_client.try_create_advertisement_api(request_data)
+        assert_status_code(response.status_code, HTTPStatus.BAD_REQUEST)
+        response_data = BadRequestErrorResponseSchemaV1.model_validate_json(response.text)
+
+        assert_create_advertisement_v1_with_incorrect_fields_bad_request_response(response_data)
+
+        validate_json_schema(response.json(), BadRequestErrorResponseSchemaV1.model_json_schema())
+
+    @allure.title("Test create advertisement v1 with zero statistics fields")
+    @allure.tag(AllureTag.ZERO, AllureTag.VALIDATION)
+    @pytest.mark.xfail(
+        reason="API returns 400 status code, but should returns 200")
+    @pytest.mark.parametrize("field,incorrect_value", [
+        ("statistics.likes", 0),
+        ("statistics.viewCount", 0),
+        ("statistics.contacts", 0),
+    ])
+    def test_create_advertisement_v1_with_zero_statistics_fields(self,
+                                                                 item_v1_client: ItemV1Client,
+                                                                 field: str,
+                                                                 incorrect_value: Any):
+        request_data, field = get_request_data_to_tests(field, incorrect_value)
+
+        response = item_v1_client.try_create_advertisement_api(request_data)
+        assert_status_code(response.status_code, HTTPStatus.OK)
         response_data = BadRequestErrorResponseSchemaV1.model_validate_json(response.text)
 
         assert_create_advertisement_v1_with_incorrect_fields_bad_request_response(response_data)
