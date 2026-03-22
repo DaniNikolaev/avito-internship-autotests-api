@@ -1,0 +1,10 @@
+INFO     HTTP_CLIENT:event_hooks.py:27 Make GET request to https://qa-internship.avito.com/api/2/statistic/aaa11945-a840-47ba-9026-3abd7a277066
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 404 Not Found from https://qa-internship.avito.com/api/2/statistic/aaa11945-a840-47ba-9026-3abd7a277066
+INFO     BASE_ASSERTIONS:base.py:19 Check that response status code equals to 404
+INFO     STATISTICS_V2_ASSERTIONS:statistics_v2.py:103 Check get statistic v2 not found response for id: aaa11945-a840-47ba-9026-3abd7a277066
+INFO     ERRORS_V2_ASSERTIONS:errors_v2.py:53 Check not found error v2
+INFO     ERRORS_V2_ASSERTIONS:errors_v2.py:23 Check not found error result v2
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'message' equals to statistic aaa11945-a840-47ba-9026-3abd7a277066 not found
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'messages' equals to None
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'status' equals to 404
+INFO     SCHEMA_ASSERTIONS:schema.py:21 Validate JSON schema
