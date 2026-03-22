@@ -1,0 +1,25 @@
+from enum import Enum
+
+
+class AllureTag(str, Enum):
+    """Теги для Allure отчетов"""
+    POSITIVE = "positive"
+    NEGATIVE = "negative"
+    REGRESSION = "regression"
+    IDEMPOTENCY = "idempotency"
+    VALIDATION = "validation"
+    NULL_FIELDS = "null_fields"
+    EMPTY_FIELDS = "empty_fields"
+    INCORRECT_TYPES = "incorrect_types"
+    NEGATIVE_VALUES = "negative_values"
+    NOT_FOUND = "not_found"
+    BAD_REQUEST = "bad_request"
+    CREATE = "create"
+    GET = "get"
+    DELETE = "delete"
+    INVALID_UUID = "invalid_uuid"
+    INVALID_SELLER_ID = "invalid_seller_id"
+    EMPTY_LIST = "empty_list"
+    STATISTICS = "statistics"
+    SELLER_ID = "seller_id"
+    ADVERTISEMENT_ID = "advertisement_id"
