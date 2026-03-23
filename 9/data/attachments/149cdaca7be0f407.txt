@@ -1,0 +1,10 @@
+INFO     HTTP_CLIENT:event_hooks.py:27 Make POST request to https://qa-internship.avito.com/api/1/item
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 400 Bad Request from https://qa-internship.avito.com/api/1/item
+INFO     BASE_ASSERTIONS:base.py:19 Check that response status code equals to 400
+INFO     ADVERTISEMENTS_V1_ASSERTIONS:items_v1.py:87 Check create advertisement v1 with null fields bad request response for field: price
+INFO     ERRORS_V1_ASSERTIONS:errors_v1.py:68 Check bad request error v1
+INFO     ERRORS_V1_ASSERTIONS:errors_v1.py:38 Check bad request error result v1
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'message' equals to поле price обязательно
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'messages' equals to {}
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'status' equals to 400
+INFO     SCHEMA_ASSERTIONS:schema.py:21 Validate JSON schema

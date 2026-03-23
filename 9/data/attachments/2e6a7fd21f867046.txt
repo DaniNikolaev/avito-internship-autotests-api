@@ -1,0 +1,10 @@
+INFO     HTTP_CLIENT:event_hooks.py:27 Make POST request to https://qa-internship.avito.com/api/1/item
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 200 OK from https://qa-internship.avito.com/api/1/item
+INFO     BASE_ASSERTIONS:base.py:19 Check that response status code equals to 200
+INFO     ADVERTISEMENTS_V1_ASSERTIONS:items_v1.py:64 Check create advertisement v1 response
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'status' equals to Сохранили объявление - f50eae07-aa54-4d38-9743-ad0a9892c963
+INFO     SCHEMA_ASSERTIONS:schema.py:21 Validate JSON schema
+INFO     HTTP_CLIENT:event_hooks.py:27 Make GET request to https://qa-internship.avito.com/api/1/item/f50eae07-aa54-4d38-9743-ad0a9892c963
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 200 OK from https://qa-internship.avito.com/api/1/item/f50eae07-aa54-4d38-9743-ad0a9892c963
+INFO     HTTP_CLIENT:event_hooks.py:27 Make DELETE request to https://qa-internship.avito.com/api/2/item/f50eae07-aa54-4d38-9743-ad0a9892c963
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 200 OK from https://qa-internship.avito.com/api/2/item/f50eae07-aa54-4d38-9743-ad0a9892c963

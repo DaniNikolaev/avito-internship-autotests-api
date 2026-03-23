@@ -1,0 +1,10 @@
+INFO     HTTP_CLIENT:event_hooks.py:27 Make POST request to https://qa-internship.avito.com/api/1/item
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 200 OK from https://qa-internship.avito.com/api/1/item
+INFO     HTTP_CLIENT:event_hooks.py:27 Make DELETE request to https://qa-internship.avito.com/api/2/item/bb7557a9-034d-41a7-ae71-5c0df94871f6
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 200 OK from https://qa-internship.avito.com/api/2/item/bb7557a9-034d-41a7-ae71-5c0df94871f6
+INFO     BASE_ASSERTIONS:base.py:19 Check that response status code equals to 200
+INFO     HTTP_CLIENT:event_hooks.py:27 Make GET request to https://qa-internship.avito.com/api/1/statistic/bb7557a9-034d-41a7-ae71-5c0df94871f6
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 200 OK from https://qa-internship.avito.com/api/1/statistic/bb7557a9-034d-41a7-ae71-5c0df94871f6
+INFO     BASE_ASSERTIONS:base.py:19 Check that response status code equals to 404
+INFO     HTTP_CLIENT:event_hooks.py:27 Make GET request to https://qa-internship.avito.com/api/1/item/bb7557a9-034d-41a7-ae71-5c0df94871f6
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 404 Not Found from https://qa-internship.avito.com/api/1/item/bb7557a9-034d-41a7-ae71-5c0df94871f6
