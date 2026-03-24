@@ -1,0 +1,9 @@
+INFO     HTTP_CLIENT:event_hooks.py:27 Make DELETE request to https://qa-internship.avito.com/api/2/item/1c5411f5-499c-4070-babb-8dd54b12b995
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 404 Not Found from https://qa-internship.avito.com/api/2/item/1c5411f5-499c-4070-babb-8dd54b12b995
+INFO     BASE_ASSERTIONS:base.py:19 Check that response status code equals to 404
+INFO     ADVERTISEMENTS_V1_ASSERTIONS:items_v1.py:273 Check delete advertisement v1 not found response for id: 1c5411f5-499c-4070-babb-8dd54b12b995
+INFO     ERRORS_V1_ASSERTIONS:errors_v1.py:53 Check not found error v1
+INFO     ERRORS_V1_ASSERTIONS:errors_v1.py:23 Check not found error result v1
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'message' equals to 
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'messages' equals to None
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'status' equals to 404
