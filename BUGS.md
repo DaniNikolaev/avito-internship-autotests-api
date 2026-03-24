@@ -1,4 +1,4 @@
-# BUGS.md
+# Задание 2. Баги API
 
 ## Известные баги API Avito Internship
 
