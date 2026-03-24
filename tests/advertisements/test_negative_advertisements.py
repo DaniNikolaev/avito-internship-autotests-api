@@ -222,6 +222,22 @@ class TestNegativeAdvertisementsV1:
 
         validate_json_schema(response.json(), BadRequestErrorResponseSchemaV1.model_json_schema())
 
+    @allure.title("Test create advertisement v1 with very big seller id")
+    @allure.tag(AllureTag.NEGATIVE, AllureTag.VALIDATION)
+    @pytest.mark.xfail(
+        reason="API returns 400 status code, but in response body message is empty and status is not 400")
+    def test_create_advertisement_v1_with_very_big_seller_id(self,
+                                                             item_v1_client: ItemV1Client):
+        request_data, _ = get_request_data_to_tests("sellerID", 2**64)
+
+        response = item_v1_client.try_create_advertisement_api(request_data)
+        assert_status_code(response.status_code, HTTPStatus.BAD_REQUEST)
+        response_data = BadRequestErrorResponseSchemaV1.model_validate_json(response.text)
+
+        assert_create_advertisement_v1_with_incorrect_fields_bad_request_response(response_data)
+
+        validate_json_schema(response.json(), BadRequestErrorResponseSchemaV1.model_json_schema())
+
     @allure.title("Test get non exist advertisement v1")
     @allure.tag(AllureTag.NEGATIVE, AllureTag.NOT_FOUND, AllureTag.ADVERTISEMENT_ID)
     def test_get_non_exist_advertisement_v1(self,
