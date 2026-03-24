@@ -1,0 +1,23 @@
+INFO     HTTP_CLIENT:event_hooks.py:27 Make POST request to https://qa-internship.avito.com/api/1/item
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 200 OK from https://qa-internship.avito.com/api/1/item
+INFO     HTTP_CLIENT:event_hooks.py:27 Make GET request to https://qa-internship.avito.com/api/1/item/c6f4c51a-7b6d-466b-9651-4b444f1371ad
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 200 OK from https://qa-internship.avito.com/api/1/item/c6f4c51a-7b6d-466b-9651-4b444f1371ad
+INFO     HTTP_CLIENT:event_hooks.py:27 Make GET request to https://qa-internship.avito.com/api/1/item/c6f4c51a-7b6d-466b-9651-4b444f1371ad
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 200 OK from https://qa-internship.avito.com/api/1/item/c6f4c51a-7b6d-466b-9651-4b444f1371ad
+INFO     BASE_ASSERTIONS:base.py:19 Check that response status code equals to 200
+INFO     BASE_ASSERTIONS:base.py:19 Check that response status code equals to 200
+INFO     ADVERTISEMENTS_V1_ASSERTIONS:items_v1.py:51 Check advertisements v1
+INFO     ADVERTISEMENTS_V1_ASSERTIONS:items_v1.py:33 Check advertisement v1
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'id' equals to c6f4c51a-7b6d-466b-9651-4b444f1371ad
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'seller_id' equals to 991117
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'name' equals to John
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'price' equals to 201629
+INFO     STATISTICS_V1_ASSERTIONS:statistics_v1.py:43 Check statistic v1
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'likes' equals to 69
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'view_count' equals to 8096
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'contacts' equals to 223
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'created_at' equals to 2026-03-24 21:07:15.327851 +0300 +0300
+INFO     HTTP_CLIENT:event_hooks.py:27 Make GET request to https://qa-internship.avito.com/api/1/item/c6f4c51a-7b6d-466b-9651-4b444f1371ad
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 200 OK from https://qa-internship.avito.com/api/1/item/c6f4c51a-7b6d-466b-9651-4b444f1371ad
+INFO     HTTP_CLIENT:event_hooks.py:27 Make DELETE request to https://qa-internship.avito.com/api/2/item/c6f4c51a-7b6d-466b-9651-4b444f1371ad
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 200 OK from https://qa-internship.avito.com/api/2/item/c6f4c51a-7b6d-466b-9651-4b444f1371ad
