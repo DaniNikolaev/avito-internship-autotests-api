@@ -70,7 +70,7 @@ class Fake:
 
         :return: Случайное количество контактов.
         """
-        return self.integer(0, 300)
+        return self.integer(1, 300)
 
     def statistics(self) -> StatisticV1Schema:
         """
