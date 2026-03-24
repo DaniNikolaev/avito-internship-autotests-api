@@ -1,0 +1,17 @@
+INFO     HTTP_CLIENT:event_hooks.py:27 Make POST request to https://qa-internship.avito.com/api/1/item
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 200 OK from https://qa-internship.avito.com/api/1/item
+INFO     HTTP_CLIENT:event_hooks.py:27 Make GET request to https://qa-internship.avito.com/api/2/statistic/c6a0d752-e128-42fd-82fc-8931725f2baa
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 200 OK from https://qa-internship.avito.com/api/2/statistic/c6a0d752-e128-42fd-82fc-8931725f2baa
+INFO     HTTP_CLIENT:event_hooks.py:27 Make GET request to https://qa-internship.avito.com/api/2/statistic/c6a0d752-e128-42fd-82fc-8931725f2baa
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 200 OK from https://qa-internship.avito.com/api/2/statistic/c6a0d752-e128-42fd-82fc-8931725f2baa
+INFO     BASE_ASSERTIONS:base.py:19 Check that response status code equals to 200
+INFO     BASE_ASSERTIONS:base.py:19 Check that response status code equals to 200
+INFO     STATISTICS_V2_ASSERTIONS:statistics_v2.py:30 Check statistics v2
+INFO     STATISTICS_V2_ASSERTIONS:statistics_v2.py:44 Check statistic v2
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'likes' equals to 101
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'view_count' equals to 5655
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'contacts' equals to 95
+INFO     HTTP_CLIENT:event_hooks.py:27 Make GET request to https://qa-internship.avito.com/api/1/item/c6a0d752-e128-42fd-82fc-8931725f2baa
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 200 OK from https://qa-internship.avito.com/api/1/item/c6a0d752-e128-42fd-82fc-8931725f2baa
+INFO     HTTP_CLIENT:event_hooks.py:27 Make DELETE request to https://qa-internship.avito.com/api/2/item/c6a0d752-e128-42fd-82fc-8931725f2baa
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 200 OK from https://qa-internship.avito.com/api/2/item/c6a0d752-e128-42fd-82fc-8931725f2baa

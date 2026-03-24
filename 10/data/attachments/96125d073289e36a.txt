@@ -1,0 +1,10 @@
+curl -X 'POST' \
+ 'https://qa-internship.avito.com/api/1/item' \
+ -H 'host: qa-internship.avito.com' \
+ -H 'accept: */*' \
+ -H 'accept-encoding: gzip, deflate' \
+ -H 'connection: keep-alive' \
+ -H 'user-agent: python-httpx/0.28.1' \
+ -H 'content-length: 109' \
+ -H 'content-type: application/json' \
+ -d '{"sellerID":314690,"name":"Bradley","price":55599,"statistics":{"likes":195,"viewCount":9884,"contacts":0.5}}'

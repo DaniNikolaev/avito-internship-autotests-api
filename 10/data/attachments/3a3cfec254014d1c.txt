@@ -1,0 +1,10 @@
+INFO     HTTP_CLIENT:event_hooks.py:27 Make GET request to https://qa-internship.avito.com/api/1/item/356e31a6-e71a-43a8-8974-c5e01cf2cc09
+INFO     HTTP_CLIENT:event_hooks.py:36 Got response 404 Not Found from https://qa-internship.avito.com/api/1/item/356e31a6-e71a-43a8-8974-c5e01cf2cc09
+INFO     BASE_ASSERTIONS:base.py:19 Check that response status code equals to 404
+INFO     ADVERTISEMENTS_V1_ASSERTIONS:items_v1.py:211 Check get advertisement v1 not found response for id: 356e31a6-e71a-43a8-8974-c5e01cf2cc09
+INFO     ERRORS_V1_ASSERTIONS:errors_v1.py:53 Check not found error v1
+INFO     ERRORS_V1_ASSERTIONS:errors_v1.py:23 Check not found error result v1
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'message' equals to item 356e31a6-e71a-43a8-8974-c5e01cf2cc09 not found
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'messages' equals to None
+INFO     BASE_ASSERTIONS:base.py:37 Check that 'status' equals to 404
+INFO     SCHEMA_ASSERTIONS:schema.py:21 Validate JSON schema
